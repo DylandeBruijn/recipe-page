@@ -1,3 +1,105 @@
 @use 'reset';
 @use 'root';
 @use 'base';
+
+.recipe {
+    --gap: 1.5rem;
+    background-color: var(--clr-white);
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 376px) {
+        padding: 2.5rem;
+        border-radius: 20px;
+        gap: var(--gap);
+    }
+
+    &__image {
+        width: 100%;
+
+        @media screen and (min-width: 376px) {
+            border-radius: 15px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+        padding: 1.5rem;
+
+        @media screen and (min-width: 376px) {
+            padding: 0;
+        }
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        font-weight: 400;
+    }
+
+    &__preparation {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: var(--clr-rose-white);
+        border-radius: 10px;
+        padding: 1.5rem;
+
+        &-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--clr-dark-raspberry);
+            font-family: var(--ff-primary);
+        }
+
+        &-list {
+            li {
+                &::marker {
+                    color: var(--clr-dark-raspberry);
+                }
+            }
+        }
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+
+        &-heading {
+            color: var(--clr-nutmeg);
+        }
+    }
+
+    &__nutrition-table {
+        border-collapse: collapse;
+        text-align: left;
+
+        tbody {
+            tr {
+                &:not(:last-child) {
+                    border-bottom: 1px solid var(--clr-light-grey);
+                }
+
+                td,
+                th {
+                    padding: 0.5rem 1rem;
+                }
+
+                th {
+                    font-weight: 400;
+                }
+
+                td {
+                    font-weight: 700;
+                    color: var(--clr-nutmeg);
+                }
+            }
+        }
+    }
+}
+
+.divider {
+    border-top: 1px solid var(--clr-light-grey);
+}
